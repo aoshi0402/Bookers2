@@ -20,5 +20,4 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     get books_exit_url
     assert_response :success
   end
-
 end

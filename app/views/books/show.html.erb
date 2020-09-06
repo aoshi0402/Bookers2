@@ -1,3 +1,7 @@
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: key) %>
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class='col-xs-3'>
@@ -41,8 +45,8 @@
 				<th><%= @book_show.body %></th>
 
       <% if current_user.id == @book_show.user_id %>
-        <td><%= link_to "edit", edit_book_path(@book_show.id), class:"btn-sm btn-success" %></td>
-				<td><%= link_to "destroy", book_path(@book_show.id), method: :delete, class:"btn-sm btn-danger","data-confirm" =>"本当に消しますか？" %>
+        <td><%= link_to "Edit", edit_book_path(@book_show.id), class:"btn-sm btn-success" %></td>
+				<td><%= link_to "Destroy", book_path(@book_show.id), method: :delete, class:"btn-sm btn-danger","data-confirm" =>"本当に消しますか？" %>
         </td>
       <% end %>
 			</tr>
